@@ -1,0 +1,43 @@
+https://raw.githubusercontent.com/evandrojgoncalves/temp/main/sp.csv
+
+--------------------------------------------------------------------------------------------------
+
+import pandas as pd
+import matplotlib as grafico
+
+clima = pd.read_csv(('https://raw.githubusercontent.com/evandrojgoncalves/temp/main/sp.csv'), sep = ';', usecols= ['Mês', 'Minima', 'Máxima','Precipitação'], index_col=0)
+
+clima.plot()
+
+
+
+x = clima.maxima
+y = clima.minima
+
+plt.bar(x,y)
+plt.show()
+
+
+-------------------------------------------------------------------------------
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+clima = pd.read_csv(('https://raw.githubusercontent.com/evandrojgoncalves/temp/main/sp.csv'), sep = ';', usecols= ['periodo', 'minima', 'maxima'])
+
+
+x = clima.maxima
+y = clima.minima
+z = clima.periodo
+
+plt.figure(figsize=(20,10))
+plt.bar(z,x, label = 'Minima', color = 'b')
+plt.bar(z,y, label = 'Máxima', color = 'r')
+plt.show()
+
+
+
+
+
+
